@@ -1,0 +1,112 @@
+<%- include('partials/_header.ejs') %>
+
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Acciones</th>
+                        <th>Id</th>
+                        <th>Nombres</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Tipo de documento</th>
+                        <th>Numero de documento</th>
+                        <th>Pais</th>
+                        <th>Idioma</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Genero</th>
+                        <th>Direccion</th>
+                        <th>Celular</th>
+                        <th>Correo</th>
+                        <th>Contacto de emergencia</th>
+                        <th>Numero de emergencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(data){ %>
+                        <%for (var i =0; i < data.length; i++){ %>
+                            <tr>
+                                <td><a href="/delete/<%= data[i].IdPx%>" class="btn btn-danger">Eliminar</a> <a href="/update/<%= data[i].IdPx%>" class="btn btn-info">Editar</a></td>
+                                <td><%= (i + 1)%></td>
+                                <td><%= data[i].NombresPx%></td>
+                                <td><%= data[i].ApePatPx%></td>
+                                <td><%= data[i].ApeMatPx%></td>
+                                <td><%= data[i].TipoDoc%></td>
+                                <td><%= data[i].NumDoc%></td>
+                                <td><%= data[i].Nacionalidad%></td>
+                                <td><%= data[i].Idioma%></td>
+                                <td><%= data[i].FechaNacimiento%></td>
+                                <td><%= data[i].Genero%></td>
+                                <td><%= data[i].Direccion%></td>
+                                <td><%= data[i].NumCelular%></td>
+                                <td><%= data[i].CorreoPac%></td>
+                                <td><%= data[i].ContactoE_nombre%></td>
+                                <td><%= data[i].ContactoE_celular%></td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row mt-5 mb-5">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">Ingreso de Pacientes nuevos</div>
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group mt-2">
+                            <input type="text" name="NombresPx" placeholder="Nombres" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="ApePatPx" placeholder="Apellido Paterno" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="ApeMatPx" placeholder="Apellido Materno" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="TipoDoc" placeholder="DNI, CE, Pasaporte, Otros" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="NumDoc" placeholder="Numero de documento" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Nacionalidad" placeholder="Nacionalidad(Pais)" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Idioma" placeholder="Idioma" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="date" name="FechaNacimiento" placeholder="dd-mm-yyyy" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Genero" placeholder="Genero" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Direccion" placeholder="Direccion" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Numcelular" placeholder="Numero de celular" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="email" name="CorreoPac" placeholder="Correo" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="ContactoE_nombre" placeholder="Nombres y apellidos" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="ContactoE_celular" placeholder="Numero de celular" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3"> Registrar paciente</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer.ejs') %>
+
+    

@@ -1,0 +1,23 @@
+{
+  "name": "proyectosanisidro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev":"nodemon src/app.js"    
+  },
+  "keywords": [],
+  "author": "Jair Fernandez Castillo",
+  "license": "ISC",
+  "description": "Sistema de gestion de pacientes e historias clinicas",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-myconnection": "^1.0.4",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}

@@ -1,0 +1,59 @@
+<%- include('partials/_header.ejs') %>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/<%= data.IdPx%>" method="post">
+                        <div class="form-group mt-2">
+                            <input type="text" name="NombresPx" value="<%= data.NombresPx%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="ApePatPx"  value="<%= data.ApePatPx%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="ApeMatPx"  value="<%= data.ApeMatPx%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="TipoDoc"  value="<%= data.TipoDoc%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="NumDoc"  value="<%= data.NumDoc%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Nacionalidad"  value="<%= data.Nacionalidad%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Idioma"  value="<%= data.Idioma%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="date" name="FechaNacimiento" value="<%= data.FechaNacimiento%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Genero" value="<%= data.Genero%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Direccion" value="<%= data.Direccion%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="Numcelular" value="<%= data.NumCelular%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="email" name="CorreoPac" value="<%= data.CorreoPac%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="ContactoE_nombre" value="<%= data.ContactoE_nombre%>" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="ContactoE_celular" value="<%= data.ContactoE_celular%>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3"> Guardar cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer.ejs') %>
+
